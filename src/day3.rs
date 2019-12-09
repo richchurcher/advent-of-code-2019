@@ -1,3 +1,4 @@
+use aoc_runner_derive::{aoc, aoc_generator};
 use array_tool::vec::Intersect;
 
 #[aoc_generator(day3)]
@@ -45,12 +46,11 @@ pub fn get_entire_path(segments: &[PathSegment]) -> Vec<(i32, i32)> {
     let mut last: (i32, i32) = (0, 0);
     segments
         .iter()
-        .map(|seg| {
+        .flat_map(|seg| {
             let path = get_path(seg, last.0, last.1);
             last = *path.last().unwrap();
             path
         })
-        .flatten()
         .collect()
 }
 
@@ -59,6 +59,7 @@ pub fn find_closest_intersection(wires: &[Vec<PathSegment>]) -> i32 {
     let first_wire = get_entire_path(&wires[0]);
     let second_wire = get_entire_path(&wires[1]);
     let intersections = first_wire.intersect(second_wire.clone());
+
     intersections
         .iter()
         .map(|(x, y)| x.abs() + y.abs())

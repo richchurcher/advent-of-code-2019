@@ -1,3 +1,5 @@
+use aoc_runner_derive::{aoc, aoc_generator};
+
 #[aoc_generator(day1)]
 pub fn converter(input: &str) -> Vec<f32> {
     input.lines().map(|l| l.parse::<f32>().unwrap()).collect()

@@ -5,7 +5,8 @@ authors = ["Rich Churcher <rich.churcher@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-aoc-runner = "*"
-aoc-runner-derive = "*"
-regex = "1"
-array_tool = "*"
+aoc-runner = "0.2.2"
+aoc-runner-derive = "0.2.2"
+array_tool = "1.0.3"
+itertools = "0.8.2"
+

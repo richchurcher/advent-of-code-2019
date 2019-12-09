@@ -1,3 +1,5 @@
+use aoc_runner_derive::{aoc, aoc_generator};
+
 #[aoc_generator(day2)]
 pub fn converter(input: &str) -> Vec<i32> {
     input
