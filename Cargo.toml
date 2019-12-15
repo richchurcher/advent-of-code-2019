@@ -8,5 +8,6 @@ edition = "2018"
 aoc-runner = "0.2.2"
 aoc-runner-derive = "0.2.2"
 array_tool = "1.0.3"
+failure = "*"
 itertools = "0.8.2"
 
